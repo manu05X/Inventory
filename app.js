@@ -2,6 +2,7 @@ const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
 const cors= require('cors');
+const path = require('path');
 
 app.use(cors());
 
@@ -14,10 +15,6 @@ const PORT = process.env.PORT;
 require('./db/conn')
 const Course = require('./model/dataSchema');
 
-
-app.get('/',(req,res) => {
-    res.send(`Hello forom Node`)
-});
 
 // No Of Pages
 app.get('/coursePages', async(req, res) =>{

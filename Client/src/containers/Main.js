@@ -12,7 +12,7 @@ function Main() {
 
   React.useEffect(() => {
     axios
-      .get("http://localhost:4000/coursePages")
+      .get("/coursePages")
       .then((res) => {
         setTotalNumberOfPages(res.data.totalpages);
       })
@@ -21,7 +21,7 @@ function Main() {
 
   React.useEffect(() => {
     axios
-      .get("http://localhost:4000/course?pageNo=" + currentPage)
+      .get("/course?pageNo=" + currentPage)
       .then((res) => {
         setItems(res.data);
       });
