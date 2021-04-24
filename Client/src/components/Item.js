@@ -38,8 +38,8 @@ const Item = (props) => {
           </p>
         </div>
         <div className="Pricing">
-          <p className="CurrentPrice">${price}</p>
-          <p className="OriginalPrice">${disprice}</p>
+          <p className="CurrentPrice">Rs.{disprice}</p>
+          <p className="OriginalPrice">Rs.{price}</p>
         </div>
       </div>
     </div>
