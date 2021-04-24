@@ -1,7 +1,9 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
+const cors= require('cors');
 
+app.use(cors());
 
 dotenv.config({path: './config.env'});
 
@@ -23,6 +25,7 @@ app.get('/coursePages', async(req, res) =>{
     res.json({totalpages: Math.ceil(totalitems/3)});
 });
 
+//courses list
 app.get('/course', async(req,res) => {
     const pageNo = req.query.pageNo || 1 ;
     //console.log(pageNo);
@@ -37,13 +40,13 @@ app.get('/course', async(req,res) => {
 
 
 app.post('/course', async(req,res) =>{
-    const {image, heading, subheading, detail, price, rating, countReview, hours, lectures, levels} = req.body;
+    const {image, heading, subheading, detail, price, disprice, rating, countReview, hours, lectures, levels} = req.body;
 
-    if(!image || !heading || !subheading || !detail || !price || !rating || !countReview || !hours || !lectures || !levels){
+    if(!image || !heading || !subheading || !detail || !price || !disprice || !rating || !countReview || !hours || !lectures || !levels){
         return res.status(422).json({error: "Plz fill the required field"});
     }
     try{
-        const myData = new Course({image, heading, subheading, detail, price, rating, countReview, hours, lectures, levels});
+        const myData = new Course({image, heading, subheading, detail, price, disprice, rating, countReview, hours, lectures, levels});
 
         await myData.save();
         res.status(201).json({message: "Data Saved Succesfully" });
@@ -52,6 +55,14 @@ app.post('/course', async(req,res) =>{
     catch(err){
         console.log(err);
     }
+});
+
+
+// for opening frontend
+app.use(express.static(path.join(__dirname, "client", "build")));
+
+app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 

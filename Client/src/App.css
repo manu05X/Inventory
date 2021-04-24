@@ -1,0 +1,137 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  height: 100vh;
+  width: 100vw;
+  background-color: #F4F5F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.Paper{
+  position: relative;
+  background-color: #fff;
+  height: 80%;
+  width: 80%;
+  
+  max-height: 600px;
+  max-width: 1000px;
+  padding: 8px 32px;
+  box-shadow: 0px 1px 24px 2px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.BottomLeftDesign{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 6px;
+  width: 32px;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 0.4;
+  box-shadow: inset 0px 1px 24px 2px rgba(0, 0, 0, 0.2);
+}
+
+.List{
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.Pagination{
+  width: 100%;
+  margin-left: 10%;
+}
+
+.Item{
+  border-top: 2px solid #EBEBE9;
+  height: 30%;
+  padding: 8px 0;
+  display: flex;
+}
+
+.Item img{
+  height: 100%;
+  width: 180px;
+}
+
+.Description{
+  padding-left: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+
+.About{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+}
+
+.Heading{
+  overflow: hidden;
+  height: 1.5rem;
+}
+
+.SubHeading{
+  font-size: 14px;
+  overflow: hidden;
+  height: 16px;
+}
+
+.ProductDetailLine{
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.Rating{
+  display: flex;
+  align-items: center;
+}
+
+.NumberRating{
+  color: #9F6C39;
+  margin-right: 2px;
+}
+
+.Review{
+  margin-left: 4px;
+  font-weight: 200;
+  font-size: 12px;
+}
+
+
+.OtherDetails{
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.CurrentPrice{
+  font-weight: 500;
+}
+
+.OriginalPrice{
+  text-decoration: line-through;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+
+@media (max-width:500px){
+  .Paper{
+    height: 100%;
+    width: 100%;
+    max-height: 1000px;
+  }
+}

@@ -21,6 +21,10 @@ const dataSchema = new mongoose.Schema({
         type: Number,
         require: true
     },
+    disprice:{
+        type: Number,
+        require: true
+     },
     rating:{
         type: Number,
         require: true
